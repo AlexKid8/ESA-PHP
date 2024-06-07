@@ -1,15 +1,15 @@
 <?php 
-require 'layout/head.php';
-require 'secure.php';
+require './models/secure.php';
+require './views/layout/head.php';
+
 
 if($_GET['page'] && in_array($_GET['page'], $pages)){
-    require 'todo/'.$_GET['page'].'.php';
+
+    require './views/'.$_GET['page'].'.php';
 }else{
-    echo 'je suis dans l\'index';
-    echo '<a href="?page=liste">Voir les tâches</a>'; 
+    require './views/main.php';
 }
 
 
-require 'layout/footer.php';
 
-
+require './views/layout/footer.php';
