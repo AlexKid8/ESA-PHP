@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background-color: darkslategrey;
+    background-color: lightgray;
 }
 
 main {
@@ -23,7 +23,7 @@ main {
 
 footer {
     margin-top: auto;
-    background-color: indigo;
+    background-color: lightgray;
 }
 
 section {
