@@ -2,9 +2,9 @@
 $directory = './data/';
 
 function GetTaskList($directoryModifier, $listName){
-    global $directory;
+    global $dir;
     $taskList = [];
-    $file = fopen($directoryModifier . $directory . $listName . '.csv', "r") or die("Impossible d'acceder au fichier");
+    $file = fopen($directoryModifier . $dir . $listName . '.csv', "r") or die("Impossible d'acceder au fichier");
     while ($task = fgetcsv($file)) {
         $taskList[] = $task;
     }
@@ -13,8 +13,8 @@ function GetTaskList($directoryModifier, $listName){
 }
 
 function SetTaskList($directoryModifier, $listName, $taskList, $toDelete = null){
-    global $directory;
-    $file = fopen($directoryModifier . $directory . $listName . '.csv', "w") or die("Impossible d'acceder au fichier");
+    global $dir;
+    $file = fopen($directoryModifier . $dir . $listName . '.csv', "w") or die("Impossible d'acceder au fichier");
     foreach ($taskList as $task){
         if($task[0] !== $toDelete){
             fputcsv($file, $task);

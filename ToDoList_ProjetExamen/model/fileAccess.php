@@ -1,30 +1,31 @@
 <?php
-$dir = './model/data/';
+$dir = '/model/data/';
 
 /**
- * @param $dirMod
- * path modifier for execution outside the root directory
- * @param $fileName
+ * @param string $dirMod
+ * path modifier for execution outside the root directory (. by default)
+ * @param string $fileName
  * name of the file on disk
  * @return array|void
  */
-function GetTaskList($dirMod, $fileName){
+function GetTaskList(string $fileName = "TaskList", string $dirMod = "."){
     global $dir;
-    $_SESSION["taskList"] = [];
+    $filePath = $dirMod . $dir . $fileName . ".csv";
+    $taskList = [];
 
-    $file = fopen($dirMod . $dir . $fileName . '.csv', "w+") or die("Impossible d'acceder au fichier");
+    $file = fopen($filePath, "w+") or die("Impossible d'acceder au fichier");
     while ($task = fgetcsv($file)) {
-        $_SESSION["taskList"][] = $task;
+        $taskList[] = $task;
     }
     fclose($file);
-    return $_SESSION["taskList"];
+    return $taskList;
 
 }
 
 /**
- * @param $dirMod
- * path modifier for execution outside the root directory
- * @param $fileName
+ * @param string $dirMod
+ * path modifier for execution outside the root directory (. by default)
+ * @param string $fileName
  * name of the file on disk
  * @param $taskList
  * array containing the task list
@@ -41,7 +42,7 @@ function GetTaskList($dirMod, $fileName){
  * if a target is set and content, update task content
  * if a target is set with no content and "done", update task status
  */
-function SetTaskList($dirMod, $fileName, $taskList, $target = null, $content = null, $done = null): void
+function SetTaskList(string $dirMod = ".", string $fileName = "TaskList", array $taskList, string $target = null, string $content = null, string $done = null): void
 {
     global $dir;
     $file = fopen($dirMod . $dir . $fileName . '.csv', "w") or die("Impossible d'acceder au fichier");

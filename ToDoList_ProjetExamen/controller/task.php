@@ -23,4 +23,4 @@ function Task($task): string
 ";
 }
 
-/* <del>	Defines text that has been deleted from a document
+/* <del>	Defines text that has been deleted from a document */

@@ -5,9 +5,9 @@
       <excludeFolder url="file://$MODULE_DIR$/Session/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/Session/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/Session/vendor/symfony/var-dumper" />
-      <excludeFolder url="file://$MODULE_DIR$/ToDoList/vendor/composer" />
-      <excludeFolder url="file://$MODULE_DIR$/ToDoList/vendor/symfony/polyfill-mbstring" />
-      <excludeFolder url="file://$MODULE_DIR$/ToDoList/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/TestToDoList/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/TestToDoList/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/TestToDoList/vendor/symfony/var-dumper" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
