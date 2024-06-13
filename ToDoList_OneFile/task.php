@@ -4,8 +4,8 @@ function Task(array $task): string
     $id = $task[0];
     $content = $task[1];
     $status = $task[2];
-    $del = $status==='done'?'<del>':'';
-    $delEnd = $status==='done'?'</del>':'';
+    $del = $status ? '<del>' : '';
+    $delEnd = $status ? '</del>' : '';
     $unchecked = "&#x2B1C";
     $checked = "&#x2705;";
     $statusMark = $status ? $checked: $unchecked;
@@ -20,8 +20,9 @@ function Task(array $task): string
     return "
 <article>
     <div>
-        <form method='post' action='./setTaskStatus.php'>
-            <input type='hidden' value=''>
+        <form method='post' action='./invertTaskStatus.php'>
+            <input type='hidden' name='invertStatusId' value='" . $id . "'>
+            <input type='hidden' name='actualStatus' value='" . $status . "'>
             <input type='submit' value='" . $statusMark . "'>
         </form>
     </div>
@@ -33,8 +34,8 @@ function Task(array $task): string
         <dialog id='edit" . $id . "'>
             <div>
                 <form method='post' action='./editTask.php'>
-                    <input type='hidden' value='" . $id . "'>
-                    <input type='text' name='deleteId' value='" . $content . "'>
+                    <input type='hidden' name='editedId' value='" . $id . "'>
+                    <input type='text' name='editedContent' value='" . $content . "'>
                     <input type='submit' value='Save Edit'>
                 </form>
             </div>

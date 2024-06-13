@@ -1,6 +1,5 @@
 <?php
 require "./task.php";
-echo var_dump($_SESSION["taskList"]);
 ?>
 
 <main>
