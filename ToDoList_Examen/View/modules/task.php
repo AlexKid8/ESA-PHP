@@ -36,9 +36,13 @@ function Task(array $task): string
         <dialog id='edit" . $id . "'>
             <div>
                 <form method='post' action='../../Controller/edit.php'>
-                    <input type='hidden' name='editedId' value='" . $id . "'>
-                    <input type='text' name='editedContent' value='" . $content . "'>
-                    <input type='submit' value='Save Edit'>
+                    <div>
+                        <input type='hidden' name='editedId' value='" . $id . "'>
+                        <input type='text' name='editedContent' value='" . $content . "' required>
+                    </div>
+                    <div>
+                        <input type='submit' value='Save Edit'>
+                    </div>
                 </form>
             </div>
             <div>

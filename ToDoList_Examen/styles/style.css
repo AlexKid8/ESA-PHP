@@ -13,8 +13,6 @@ body {
 
 header {
     background-color: lightgray;
-    margin: 8px;
-    padding: 8px;
 }
 
 main {
@@ -55,15 +53,14 @@ div {
 }
 
 form, input, button {
-    height: 32px;
+    min-height: 32px;
     margin: auto;
 }
 
 input[type=text] {
-    width: 85%;
-    float: left;
+    width: Calc(100% - 8px)
 }
 
-input[type=submit], button {
-    float: right;
+input + input[type=submit]{
+    margin: 8px;
 }
