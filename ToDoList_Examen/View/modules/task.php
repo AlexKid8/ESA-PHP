@@ -16,6 +16,8 @@ function Task(array $task): string
      * ☑	9745	&#x2611	    BALLOT BOX WITH CHECK
      * ✍	9997	&#x270D	    WRITING HAND
      * ❌	10060	&#x274C	    Cross mark
+     * ➕	10133	&#x2795	Plus
+
     */
     return "
 <article>

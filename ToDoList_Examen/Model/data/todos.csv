@@ -1,6 +1,6 @@
 1,"Create views (header.php, main.php, footer.php)",done
 2,"Create model (functions.php)",done
 3,"Create controllers (add.php, edit.php, toggle.php, delete.php)",done
-4,"Add function to create a new todo with custom name",
-5,"Add a view to select the todos file",
+4,"Add function to create a new todo file with custom name",
+5,"Add a view to select the todo file",
 6,"add a controller to manage todo selection",
