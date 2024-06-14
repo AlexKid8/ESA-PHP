@@ -48,6 +48,10 @@ article {
     overflow: auto;
 }
 
+dialog {
+    width: 80vw;
+}
+
 div {
     display: flex;
     flex-direction: row;
@@ -55,14 +59,27 @@ div {
 }
 
 form, input, button {
+    display: flex;
+    flex-direction: column;
     min-height: 32px;
-    margin: auto;
+    min-width: 32px;
+    margin: 8px auto 8px auto;
+    width: Calc(100% - 8px);
+
 }
 
 input[type=text] {
     width: Calc(100% - 8px)
 }
 
-input + input[type=submit]{
-    margin: 8px;
+button {
+    max-height: 32px;
+    align-self: center;
+    justify-self: center;
+    margin: 4px;
+}
+input[type=submit], button {
+    text-align: center;
+    font-size: 20px;
+    padding: 0;
 }

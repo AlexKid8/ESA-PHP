@@ -1,6 +1,6 @@
-1718397287,"Create views (header.php, main.php, footer.php)",done
-1718397304,"Create model (functions.php)",done
-1718397320,"Create controllers (add.php, edit.php, toggle.php, delete.php)",done
+1718397287,"Create views (header.php, main.php, footer.php)",done,1718400685
+1718397304,"Create model (functions.php)",done,1718400749
+1718397320,"Create controllers (add.php, edit.php, toggle.php, delete.php)",done,1718400764
 1718397391,"Add function to create a new todo file with custom name",
 1718397415,"Add a view to select the todo file",
 1718397434,"add a controller to manage todo selection",
