@@ -1,0 +1,82 @@
+input#ThemeSwitchGlobal,
+input#ThemeSwitch {
+    opacity: 0;
+    position: absolute;
+    top: -10ch;
+    left: -10ch;
+}
+
+input#ThemeSwitchGlobal:checked + .App {
+    --hue-primary: 60;
+    --hue-secondary: 180;
+    --hue-highlight: 300;
+
+    --background-color: hsla(var(--hue-primary), 95%, 95%, 0.9);
+    --link-color:  hsla(var(--hue-highlight), 95%, 25%, 0.9);
+    --link-color-highlight: hsla(var(--hue-highlight), 95%, 50%, 0.9);
+    --text-color: hsla(0, 0%, 5%, 0.9);
+}
+
+.ThemeSwitchLabel,
+.ThemeSwitchLabel > * {
+    transition: all ease-in-out 0.5s;
+    box-sizing: border-box;
+}
+
+.ThemeSwitchLabel {
+    width: 8ch;
+    height: 4ch;
+    background: hsla(240, 64%, 27%, 1);
+    border: solid hsla(30, 50%, 50%, 0.8) 5%;
+    border-radius: 2ch;
+    align-self: center;
+    justify-self: center;
+    position: relative;
+    margin: 2ch;
+}
+
+input#ThemeSwitch:checked + .ThemeSwitchLabel {
+    background: hsla(203, 92%, 75%, 1);
+}
+
+.Switch {
+    --width: 3.5ch;
+    --space-left: calc(var(--width) / 8);
+    --space-right: calc(var(--space-left) + var(--width));
+    width: var(--width);
+    height: var(--width);
+    border-radius: 50%;
+    background: hsla(222, 9%, 78%, 1);
+    position: absolute;
+    top: calc(50% - (var(--width) / 2));
+    left: calc(0% + var(--space-left));
+}
+
+input#ThemeSwitch:checked + .ThemeSwitchLabel > .Switch {
+    background: hsla(41, 100%, 69%, 100%);
+    left: calc(100% - var(--space-right));
+}
+
+.Moon {
+    position: absolute;
+    z-index: 10;
+    top: 0%;
+    right: 0%;
+    border-radius: 50%;
+    background: hsla(30, 50%, 0%, 0.75);
+    width: 80%;
+    height: 80%;
+    transition: all linear 0.5s;
+}
+
+.clip-circle {
+    clip-path: circle(50%);
+}
+
+input#ThemeSwitch:checked + .ThemeSwitchLabel > .Switch > .Moon {
+    width: 0%;
+    height: 0%;
+    top: 10%;
+    right: 10%;
+    background: hsla(30, 50%, 0%, 0);
+}

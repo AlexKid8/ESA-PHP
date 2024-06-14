@@ -52,7 +52,7 @@ function Task(array $task): string
         <button onclick='delete" . $id . ".showModal()'>&#x274C</button>
         <dialog id='delete". $id . "'>
             <div>
-                <p> Are you sure you want to delete : " . $content . " ?</p>
+                <p> Are you sure you want to delete : <br>" . $content . " ?</p>
             </div>
             <div>
                 <form method='post' action='../../Controller/delete.php'>

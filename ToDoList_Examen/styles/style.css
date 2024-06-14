@@ -13,6 +13,8 @@ body {
 
 header {
     background-color: lightgray;
+    display: flex;
+    flex-direction: row;
 }
 
 main {
