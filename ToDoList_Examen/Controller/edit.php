@@ -10,6 +10,7 @@ $newTaskList = [];
 
 foreach ($taskList as $task){
     if($task[0] !== $editedId){
+        $task[0] = (int) $task[0];
         $newTaskList[] = $task;
     } else {
         $newTaskList[] = [$editedId, $editedContent, $task[2]];

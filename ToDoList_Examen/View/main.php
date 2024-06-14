@@ -12,8 +12,12 @@ require "./View/modules/task.php";
 
     <section>
         <?php
-        foreach ($_SESSION["taskList"] as $task){
-            echo Task($task);
+        if ($_SESSION["taskList"]){
+            foreach ($_SESSION["taskList"] as $task){
+                echo Task($task);
+            }
+        } else {
+            echo "<h3> ToDoList is Empty </h3>";
         }
         ?>
     </section>

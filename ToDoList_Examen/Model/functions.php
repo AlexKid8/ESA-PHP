@@ -1,7 +1,7 @@
 <?php
 function SaveTodos(array $taskList, string $filePath = "./Model/data/todos.csv"): array
 {
-    $file = fopen($filePath, "w+") or die("Impossible d'acceder au fichier");
+    $file = fopen($filePath, "w") or die("Impossible d'acceder au fichier");
     foreach ($taskList as $task){
             fputcsv($file, $task);
     }

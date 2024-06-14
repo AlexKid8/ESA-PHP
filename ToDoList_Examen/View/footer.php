@@ -1,5 +1,5 @@
 <footer>
-    TEST FOOTER
+    <p>Alexandre Ben el Hiouel</p>
 </footer>
 </body>
 </html>
