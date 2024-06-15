@@ -5,6 +5,7 @@ require "./View/modules/task.php";
 <main>
     <section>
         <form method="post" action="../Controller/add.php">
+            <label for="newContent">Add a new task</label>
             <input type="text" name="newContent" placeholder="Type new task here" required>
             <input type="submit" value="&#x2795">
         </form>

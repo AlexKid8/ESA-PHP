@@ -1,24 +1,16 @@
 <?php
+
 function Task(array $task): string
 {
     $id = $task[0];
     $content = $task[1];
     $status = $task[2];
-    $del = $status ? '<del>' : '';
-    $delEnd = $status ? '</del>' : '';
     $unchecked = "&#x2B1C";
     $checked = "&#x2705;";
     $statusMark = $status ? $checked: $unchecked;
-    /*
-     * ⬜	11036	&#x2B1C	    White large square
-     * ✅	9989	&#x2705	    Check mark button
-     * ☐	9744	&#x2610	    BALLOT BOX
-     * ☑	9745	&#x2611	    BALLOT BOX WITH CHECK
-     * ✍	9997	&#x270D	    WRITING HAND
-     * ❌	10060	&#x274C	    Cross mark
-     * ➕	10133	&#x2795	Plus
+    $del = $status ? '<del>' : '';
+    $delEnd = $status ? '</del>' : '';
 
-    */
     return "
 <article>
     <div>
@@ -28,7 +20,7 @@ function Task(array $task): string
             <input type='submit' value='" . $statusMark . "'>
         </form>
     </div>
-    <div>
+    <div class='task'>
         <p>" . $del . $content . $delEnd . "</p>
     </div>
         <div>
@@ -38,6 +30,7 @@ function Task(array $task): string
                 <form method='post' action='../../Controller/edit.php'>
                     <div>
                         <input type='hidden' name='editedId' value='" . $id . "'>
+                        <label for='editedContent'>Edit task</label>
                         <input type='text' name='editedContent' value='" . $content . "' required>
                     </div>
                     <div>

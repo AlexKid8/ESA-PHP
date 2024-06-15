@@ -58,6 +58,11 @@ div {
     margin: 8px;
 }
 
+div.task {
+    flex-direction: column;
+    margin: 0;
+}
+
 form, input, button {
     display: flex;
     flex-direction: column;
