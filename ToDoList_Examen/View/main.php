@@ -1,25 +1,18 @@
-<?php
-require "./View/modules/task.php";
-?>
+
 
 <main>
     <section>
         <form method="post" action="../Controller/add.php">
             <label for="newContent">Add a new task</label>
-            <input type="text" name="newContent" placeholder="Type new task here" required>
+            <input type="text" id="newContent" name="newContent" placeholder="Type new task here" required>
+            <label for='newPriority'>Priority</label>
+            <select id="newPriority" name='newPriority'>
+                <option value='high'>High</option>
+                <option value='default' selected>Default</option>
+                <option value='low'>Low</option>
+            </select>
             <input type="submit" value="&#x2795">
         </form>
     </section>
-
-    <section>
-        <?php
-        if ($_SESSION["taskList"]){
-            foreach ($_SESSION["taskList"] as $task){
-                echo Task($task);
-            }
-        } else {
-            echo "<h3> ToDoList is Empty </h3>";
-        }
-        ?>
-    </section>
+    <?php require  "./View/modules/listSection.php"; ?>
 </main>

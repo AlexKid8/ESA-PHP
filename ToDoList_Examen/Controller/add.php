@@ -7,9 +7,9 @@ if($_POST["newContent"] !== ""){
     $taskList = $_SESSION["taskList"];
     $newId = time();
     $newContent = $_POST["newContent"];
-    $newStatus = "";
+    $newPriority = $_POST["newPriority"];
 
-    $taskList[] = [$newId, $newContent, $newStatus];
+    $taskList[] = [$newId, $newContent, "", "", $newPriority];
 
     $_SESSION["taskList"] = SaveTodos($taskList, "../Model/data/todos.csv");
 }

@@ -13,7 +13,7 @@ foreach ($taskList as $task){
     if($task[0] !== $invertStatusId){
         $newTaskList[] = $task;
     } else {
-        $newTaskList[] = [$invertStatusId, $task[1], $invertedStatus, time()];
+        $newTaskList[] = [$invertStatusId, $task[1], $invertedStatus, time(), $task[4]];
     }
 
     $_SESSION["taskList"] = $newTaskList;

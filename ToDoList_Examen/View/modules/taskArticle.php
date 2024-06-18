@@ -5,6 +5,10 @@ function Task(array $task): string
     $id = $task[0];
     $content = $task[1];
     $status = $task[2];
+    $priority = $task[4] ? $task[4] : "default";
+    $priorityHigh = $priority === "high" ? 'selected' : '';
+    $priorityDefault = $priority === "default" ? 'selected' : '';
+    $priorityLow = $priority === "low" ? 'selected' : '';
     $unchecked = "&#x2B1C";
     $checked = "&#x2705;";
     $statusMark = $status ? $checked: $unchecked;
@@ -28,7 +32,13 @@ function Task(array $task): string
         <dialog id='edit" . $id . "'>
             <div>
                 <form method='post' action='../../Controller/edit.php'>
-                    <div>
+                    <div class='inputs'>
+                        <label for='editedPriority'>Edit Priority</label>
+                        <select name='editedPriority'>
+                            <option value='high' " . $priorityHigh . ">High</option>
+                            <option value='default' " . $priorityDefault . ">Default</option>
+                            <option value='low' " . $priorityLow . ">Low</option>
+                        </select>
                         <input type='hidden' name='editedId' value='" . $id . "'>
                         <label for='editedContent'>Edit task</label>
                         <input type='text' name='editedContent' value='" . $content . "' required>

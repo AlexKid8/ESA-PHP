@@ -6,13 +6,14 @@ require "../Model/functions.php";
 $taskList = $_SESSION["taskList"];
 $editedId = $_POST["editedId"];
 $editedContent = $_POST["editedContent"];
+$editedPriority = $_POST["editedPriority"];
 $newTaskList = [];
 
 foreach ($taskList as $task){
     if($task[0] !== $editedId){
         $newTaskList[] = $task;
     } else {
-        $newTaskList[] = [$editedId, $editedContent, $task[2], $task[3]];
+        $newTaskList[] = [$editedId, $editedContent, $task[2], $task[3], $editedPriority];
     }
 
 $_SESSION["taskList"] = $newTaskList;
