@@ -6,9 +6,9 @@ function Task(array $task): string
     $content = $task[1];
     $status = $task[2];
     $priority = $task[4] ? $task[4] : "default";
-    $priorityHigh = $priority === "high" ? 'selected' : '';
-    $priorityDefault = $priority === "default" ? 'selected' : '';
-    $priorityLow = $priority === "low" ? 'selected' : '';
+    $priorityHigh = $priority === "1" ? 'selected' : '';
+    $priorityDefault = $priority === "2" ? 'selected' : '';
+    $priorityLow = $priority === "3" ? 'selected' : '';
     $unchecked = "&#x2B1C";
     $checked = "&#x2705;";
     $statusMark = $status ? $checked: $unchecked;
@@ -35,9 +35,9 @@ function Task(array $task): string
                     <div class='inputs'>
                         <label for='editedPriority'>Edit Priority</label>
                         <select name='editedPriority'>
-                            <option value='high' " . $priorityHigh . ">High</option>
-                            <option value='default' " . $priorityDefault . ">Default</option>
-                            <option value='low' " . $priorityLow . ">Low</option>
+                            <option value='1' " . $priorityHigh . ">High</option>
+                            <option value='2' " . $priorityDefault . ">Default</option>
+                            <option value='3' " . $priorityLow . ">Low</option>
                         </select>
                         <input type='hidden' name='editedId' value='" . $id . "'>
                         <label for='editedContent'>Edit task</label>
