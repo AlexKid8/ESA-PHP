@@ -8,21 +8,29 @@ function Compare($value1, $value2): int
     }
     return $value1[4] < $value2[4] ? -1 : 1;
 }
-usort($taskList, "Compare")
+if ($_SESSION["settings"]["orderByPriority"]){
+    usort($taskList, "Compare");
+}
 ?>
 
 <section>
     <?php
     if ($taskList){
-        foreach ($taskList as $task){
-            if ($task[2] === ""){
-                echo Task($task);
+        if ($_SESSION["settings"]["notDoneFirst"]){
+            foreach ($taskList as $task){
+                if ($task[2] === ""){
+                    echo Task($task);
+                }
             }
-        }
-        foreach ($taskList as $task){
+            foreach ($taskList as $task){
                 if ($task[2] === "done"){
                     echo Task($task);
                 }
+            }
+        } else {
+            foreach ($taskList as $task){
+                echo Task($task);
+            }
         }
 
     } else {

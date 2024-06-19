@@ -15,6 +15,7 @@ header {
     background-color: lightgray;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 main {
@@ -64,18 +65,13 @@ div.task {
 }
 
 
-form, input, button {
+form, input, button, select {
     display: flex;
     flex-direction: column;
     min-height: 32px;
     min-width: 32px;
     margin: 8px auto 8px auto;
     width: Calc(100% - 8px);
-
-}
-
-input[type=text] {
-    width: Calc(100% - 8px)
 }
 
 button {
@@ -93,4 +89,10 @@ input[type=submit], button {
 div.inputs {
     display: flex;
     flex-direction: column;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
 }

@@ -1,14 +1,27 @@
 <?php
+session_start();
 require "../Model/functions.php";
 
 $settings = [
-    "orderBy" => $_POST["orderBy"] ?: "priority",
-    "notDoneFirst" => $_POST["notDoneFirst"] ?: true,
-    "theme" => $_POST["theme"] ?: "default",
-    "listName" => $_POST["listName"] ?: "TaskList"
+    "orderByPriority" => (bool)$_POST["orderByPriority"],
+    "notDoneFirst" => (bool)$_POST["notDoneFirst"],
+    "debug" => (bool)$_POST["debug"]
     ];
+
+$_SESSION["settings"] = $settings;
+
+if ($_SESSION["settings"]["debug"]){
+    $_SESSION["POST"] = $_POST;
+    $_SESSION["GET"] = $_GET;
+    $_SESSION["COOKIE"] = $_COOKIE;
+    $_SESSION["ENV"] = $_ENV;
+    $_SESSION["FILES"] = $_FILES;
+    $_SESSION["REQUEST"] = $_REQUEST;
+    $_SESSION["http_response_header"] = $http_response_header;
+    $_SESSION["SERVER"] = $_SERVER;
+}
 
 header("Location: {$_SERVER['HTTP_REFERER']}");
 
-SetSettings($settings);
+SaveSettings($settings, "Settings", "../Model/data/");
 exit;

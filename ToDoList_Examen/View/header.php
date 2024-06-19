@@ -12,4 +12,7 @@
 <body>
 <header>
     <h1>ToDoList</h1>
+    <nav>
+        <a href="./View/settings.php">Settings</a>
+    </nav>
 </header>

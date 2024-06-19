@@ -1,8 +1,6 @@
-1718723818,"Low edited",done,1718726489,3
-1718723830,Default,,1718726444,2
-1718723844,Low,,1718726450,3
-1718725890,low,,,3
-1718726132,High,done,1718726493,1
-1718726514,"last High",,,1
-1718726526,"Last low",,,3
-1718726534,"last default",done,1718726547,2
+1718397287,"Create views (header.php, main.php, footer.php)",done,1718837600,1
+1718397304,"Create model (functions.php)",done,1718837602,1
+1718397320,"Create controllers (add.php, edit.php, toggle.php, delete.php)",done,1718837604,1
+1718789685,"Low priority",,1718837577,3
+1718789699,"High Priority",,1718818283,1
+1718789710,"Default Priority",,,2

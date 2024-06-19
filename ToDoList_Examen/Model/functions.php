@@ -9,7 +9,7 @@ function SaveTodos(array $taskList, string $filePath = "./Model/data/todos.csv")
     return $taskList;
 }
 
-function GetTodos(string $filePath = "./Model/data/todos.csv"): array
+function LoadTodos(string $filePath = "./Model/data/todos.csv"): array
 {
     $taskList = [];
     $file = fopen($filePath, "r") or die("Unable to access file");
@@ -20,17 +20,17 @@ function GetTodos(string $filePath = "./Model/data/todos.csv"): array
     return $taskList;
 }
 
-function SetSettings(array $settings, string $settingsFileName = "Settings", string $filePath = "../Model/data/"): void
+function SaveSettings(array $settings, string $settingsFileName = "Settings", string $filePath = "./Model/data/"): void
 {
     $settingsJSON = json_encode($settings);
     file_put_contents($filePath . $settingsFileName . ".json", $settingsJSON)
-    or die("Unable to access file");;
+    or die("Unable to access file");
 }
 
-function GetSettings(string $settingsFileName = "Settings", string $filePath = "../Model/data/"):array
+function LoadSettings(string $settingsFileName = "Settings", string $filePath = "./Model/data/"):array
 {
     $settingsJSON = file_get_contents($filePath . $settingsFileName . ".json")
     or die("Unable to access file");
 
-    return json_decode($settingsJSON);
+    return (array) json_decode($settingsJSON);
 }

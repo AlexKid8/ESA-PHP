@@ -1,0 +1,10 @@
+* {
+    border-radius: 8px;
+    font-family: Arial, serif;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+}

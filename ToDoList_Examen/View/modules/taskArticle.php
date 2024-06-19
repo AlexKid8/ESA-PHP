@@ -16,6 +16,7 @@ function Task(array $task): string
     $delEnd = $status ? '</del>' : '';
 
     return "
+<br>
 <article>
     <div>
         <form method='post' action='../../Controller/toggle.php'>
@@ -33,23 +34,23 @@ function Task(array $task): string
             <div>
                 <form method='post' action='../../Controller/edit.php'>
                     <div class='inputs'>
+                        <input type='hidden' name='editedId' value='" . $id . "'>
+                        <label for='editedContent'>Edit task</label>
+                        <input type='text' name='editedContent' value='" . $content . "' required>
                         <label for='editedPriority'>Edit Priority</label>
                         <select name='editedPriority'>
                             <option value='1' " . $priorityHigh . ">High</option>
                             <option value='2' " . $priorityDefault . ">Default</option>
                             <option value='3' " . $priorityLow . ">Low</option>
                         </select>
-                        <input type='hidden' name='editedId' value='" . $id . "'>
-                        <label for='editedContent'>Edit task</label>
-                        <input type='text' name='editedContent' value='" . $content . "' required>
                     </div>
                     <div>
                         <input type='submit' value='Save Edit'>
                     </div>
+                    <div>
+                        <input type='submit' formmethod='dialog' value='Cancel Edit'>
+                    </div>
                 </form>
-            </div>
-            <div>
-                <button onclick='edit". $id . ".close()'>Cancel Edit</button>
             </div>
         </dialog>
         <button onclick='delete" . $id . ".showModal()'>&#x274C</button>
@@ -61,13 +62,12 @@ function Task(array $task): string
                 <form method='post' action='../../Controller/delete.php'>
                     <input type='hidden' name='deleteId' value='" . $id . "'>                    
                     <input type='submit' value='Confirm Delete'>
+                    <input type='submit' formmethod='dialog' value='Cancel Delete'>
                 </form>
-            </div>
-            <div>
-                <button onclick='delete". $id . ".close()'>Cancel Delete</button>
             </div>
         </dialog>
     </div>
 </article>
+<br>
 ";
 }
