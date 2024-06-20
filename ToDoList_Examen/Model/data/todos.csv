@@ -1,6 +1,9 @@
-1718397287,"Create views (header.php, main.php, footer.php)",done,1718837600,1
-1718397304,"Create model (functions.php)",done,1718837602,1
-1718397320,"Create controllers (add.php, edit.php, toggle.php, delete.php)",done,1718837604,1
-1718789685,"Low priority",,1718837577,3
-1718789699,"High Priority",,1718818283,1
-1718789710,"Default Priority",,,2
+1718397287,"Create views (header.php, main.php, footer.php)",done,1718837600,1,#ff0000
+1718397304,"Create model (functions.php)",done,1718837602,1,#ff0000
+1718397320,"Create controllers (add.php, edit.php, toggle.php, delete.php)",done,1718837604,1,#ff0000
+1718789685,"Low priority",,1718837577,3,#00ff00
+1718789699,"High Priority",,1718873945,1,#ff0000
+1718789710,"Default Priority",,,2,#ffff00
+1718874751,"Default color",,,2,#ffff00
+1718875350,"High color",,,1,#ff0000
+1718875594,"default color hex",,,2,#ffff00

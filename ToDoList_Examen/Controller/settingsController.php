@@ -2,11 +2,10 @@
 session_start();
 require "../Model/functions.php";
 
-$settings = [
-    "orderByPriority" => (bool)$_POST["orderByPriority"],
-    "notDoneFirst" => (bool)$_POST["notDoneFirst"],
-    "debug" => (bool)$_POST["debug"]
-    ];
+$settings = LoadSettings("Settings", "../Model/data/");
+foreach ($settings as $key => $value){
+    $settings[$key] = (bool)$_POST[$key];
+}
 
 $_SESSION["settings"] = $settings;
 

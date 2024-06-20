@@ -5,7 +5,8 @@ function Task(array $task): string
     $id = $task[0];
     $content = $task[1];
     $status = $task[2];
-    $priority = $task[4] ? $task[4] : "default";
+    $priority = $task[4] ?: "default";
+    $color = $task[5] ?: "";
     $priorityHigh = $priority === "1" ? 'selected' : '';
     $priorityDefault = $priority === "2" ? 'selected' : '';
     $priorityLow = $priority === "3" ? 'selected' : '';
@@ -22,7 +23,7 @@ function Task(array $task): string
         <form method='post' action='../../Controller/toggle.php'>
             <input type='hidden' name='invertStatusId' value='" . $id . "'>
             <input type='hidden' name='actualStatus' value='" . $status . "'>
-            <input type='submit' value='" . $statusMark . "'>
+            <input type='submit' value='" . $statusMark . "' style='background-color:" . $color . "'>
         </form>
     </div>
     <div class='task'>
@@ -43,6 +44,8 @@ function Task(array $task): string
                             <option value='2' " . $priorityDefault . ">Default</option>
                             <option value='3' " . $priorityLow . ">Low</option>
                         </select>
+                        <label for='editedColor'>Edit Color</label>
+                        <input type='color' name='editedColor' value='" . $color . "'>
                     </div>
                     <div>
                         <input type='submit' value='Save Edit'>

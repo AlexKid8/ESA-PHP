@@ -8,8 +8,10 @@ if($_POST["newContent"] !== ""){
     $newId = time();
     $newContent = $_POST["newContent"];
     $newPriority = $_POST["newPriority"];
+    $newColor = (int)$newPriority === 1 ? "#ff0000" : "#ffff00";
+    $newColor = (int)$newPriority === 3 ? "#00ff00" : $newColor;
 
-    $taskList[] = [$newId, $newContent, "", "", $newPriority];
+    $taskList[] = [$newId, $newContent, "", "", $newPriority, $newColor];
 
     $_SESSION["taskList"] = SaveTodos($taskList, "../Model/data/todos.csv");
 }
