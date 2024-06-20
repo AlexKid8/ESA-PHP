@@ -12,25 +12,33 @@ function SaveTodos(array $taskList, string $filePath = "./Model/data/todos.csv")
 function LoadTodos(string $filePath = "./Model/data/todos.csv"): array
 {
     $taskList = [];
-    $file = fopen($filePath, "r") or die("Unable to access file");
-    while ($task = fgetcsv($file)) {
-        $taskList[] = $task;
+    if ($file = fopen($filePath, "r")){
+        while ($task = fgetcsv($file)) {
+            $taskList[] = $task;
+        }
+        fclose($file);
+        return $taskList;
+    } else {
+        return $taskList;
     }
-    fclose($file);
-    return $taskList;
 }
 
 function SaveSettings(array $settings, string $settingsFileName = "Settings", string $filePath = "./Model/data/"): void
 {
-    $settingsJSON = json_encode($settings);
+    $settingsJSON = json_encode($settings, JSON_PRETTY_PRINT);
     file_put_contents($filePath . $settingsFileName . ".json", $settingsJSON)
     or die("Unable to access file");
 }
 
 function LoadSettings(string $settingsFileName = "Settings", string $filePath = "./Model/data/"):array
 {
-    $settingsJSON = file_get_contents($filePath . $settingsFileName . ".json")
-    or die("Unable to access file");
-
-    return (array) json_decode($settingsJSON);
+    if ($settingsJSON = file_get_contents($filePath . $settingsFileName . ".json")){
+        return (array) json_decode($settingsJSON);
+    } else{
+        return [
+            "orderByPriority" => true,
+            "notDoneFirst" => true,
+            "debug" => false
+        ];
+    }
 }
