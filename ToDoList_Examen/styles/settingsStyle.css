@@ -8,3 +8,7 @@ nav {
     flex-direction: column;
     margin: 16px;
 }
+
+a, input {
+    margin: 8px;
+}
